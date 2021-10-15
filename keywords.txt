@@ -1,0 +1,34 @@
+#######################################
+# Syntax Coloring Map For PID Library
+#######################################
+
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+DFRobot_BosonAdcModule	KEYWORD1
+
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+refreshBasicInfo	KEYWORD2
+getAnalogSignalA1	KEYWORD2
+getAnalogSignalA2	KEYWORD2
+
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+NO_ERR	LITERAL1
+ERR_DATA_BUS	LITERAL1
+ERR_IC_VERSION	LITERAL1
+basicInfo	LITERAL1
+PID	LITERAL1
+VID	LITERAL1
+version	LITERAL1
+iicAddr	LITERAL1
