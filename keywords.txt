@@ -7,7 +7,7 @@
 # Datatypes (KEYWORD1)
 #######################################
 
-DFRobot_BosonAdcModule	KEYWORD1
+DFRobot_BosonADCModule	KEYWORD1
 
 
 #######################################

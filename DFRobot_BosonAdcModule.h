@@ -1,13 +1,13 @@
 /*!
- * @file  DFRobot_BosonAdcModule.h
- * @brief  Define infrastructure of DFRobot_BosonAdcModule class
+ * @file  DFRobot_BosonADCModule.h
+ * @brief  Define infrastructure of DFRobot_BosonADCModule class
  * @details  获取模块基本信息, 获取模拟量A1和A2
  * @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license  The MIT License (MIT)
  * @author  [qsjhyy](yihuan.huang@dfrobot.com)
  * @version  V1.0
  * @date  2021-10-12
- * @url  https://github.com/DFRobot/DFRobot_BosonAdcModule
+ * @url  https://github.com/DFRobot/DFRobot_BosonADCModule
  */
 #ifndef __DFROBOT_BOSON_ADC_MODULE_H__
 #define __DFROBOT_BOSON_ADC_MODULE_H__
@@ -39,7 +39,7 @@
 #define BOSON_ADC_MODULE_ADC2_LSB_REG                uint8_t(0x0B)
 
 
-class DFRobot_BosonAdcModule
+class DFRobot_BosonADCModule
 {
 public:
   #define NO_ERR             0     ///< No error
@@ -60,13 +60,13 @@ public:
 
 public:
   /**
-   * @fn DFRobot_BosonAdcModule
+   * @fn DFRobot_BosonADCModule
    * @brief 构造函数
    * @param iicAddr BosonAdcModule IIC communication address
    * @param pWire Wire.h里定义了Wire对象, 因此使用&Wire就能够指向并使用Wire中的方法
    * @return None
    */
-  DFRobot_BosonAdcModule(uint8_t iicAddr=BOSON_ADC_MODULE_DEFAULT_IIC_ADDR, TwoWire *pWire = &Wire);
+  DFRobot_BosonADCModule(uint8_t iicAddr=BOSON_ADC_MODULE_DEFAULT_IIC_ADDR, TwoWire *pWire = &Wire);
 
   /**
    * @fn begin

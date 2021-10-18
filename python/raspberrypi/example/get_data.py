@@ -7,18 +7,18 @@
   @author    [qsjhyy](yihuan.huang@dfrobot.com)
   @version   V1.0
   @date      2021-10-12
-  @url       https://github.com/DFRobot/DFRobot_BosonAdcModule
+  @url       https://github.com/DFRobot/DFRobot_BosonADCModule
 '''
 from __future__ import print_function
 import sys
 sys.path.append('../')
-from DFRobot_BosonAdcModule import *
+from DFRobot_BosonADCModule import *
 
-'''!
+'''
   实例化一个对象，来驱动我们的传感器;
   IIC地址根据模块当前选择的设置即可，默认为0x06
 '''
-sensor = DFRobot_BosonAdcModule(i2c_addr = 0x06, bus = 1)
+sensor = DFRobot_BosonADCModule(i2c_addr = 0x06, bus = 1)
 
 
 def setup():
@@ -27,7 +27,7 @@ def setup():
     time.sleep(3)
   print("sensor begin successfully!!!\n")
 
-  '''!
+  '''
     读取模块基本信息
     重新从传感器获取其基本信息, 并缓存到存储信息的变量里面:
     PID, VID, version, IIC_addr
@@ -50,14 +50,14 @@ def setup():
 
 
 def loop():
-  '''!
+  '''
     获取模拟信号A1
     返回值范围为： 0-1023
   '''
   analog_signal_A1 = sensor.get_analog_signal_A1()
   print("Module current analog signal A1: %d" %analog_signal_A1)
 
-  '''!
+  '''
     获取模拟信号A2
     返回值范围为： 0-1023
   '''

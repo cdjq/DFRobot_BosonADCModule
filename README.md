@@ -1,4 +1,4 @@
-# DFRobot_BosonAdcModule
+# DFRobot_BosonADCModule
 * [中文版](./README_CN.md)
 
 Why？BOSON主控板所用芯片ESP32-WROVE-32 模拟量读取误差比较大，无法准确读取BOSON 的ph计，温湿度，距离等传感器的等值。所以需要通过另外一块专门用于模拟数值数据处理的模块作为数据转换模块。
@@ -74,15 +74,14 @@ What？通过单片机采集模拟数据，转换为I2C信号输出。
 ## Compatibility
 
 MCU                | Work Well    | Work Wrong   | Untested    | Remarks
------------------- | :----------: | :----------: | :---------: | -----
-Arduino Uno        |      √       |              |             | 
-Arduino MEGA2560   |      √       |              |             | 
-Arduino Leonardo   |      √       |              |             | 
-FireBeetle-ESP8266 |      √       |              |             | 
-FireBeetle-ESP32   |      √       |              |             | 
-FireBeetle-M0      |      √       |              |             | 
-Micro:bit          |      √       |              |             | 
-Raspberry Pi       |      √       |              |             | 
+------------------ | :----------: | :----------: | :---------: | :----:
+Arduino Uno        |      √       |              |             |
+Arduino MEGA2560   |      √       |              |             |
+Arduino Leonardo   |      √       |              |             |
+FireBeetle-ESP8266 |      √       |              |             |
+FireBeetle-ESP32   |      √       |              |             |
+FireBeetle-M0      |      √       |              |             |
+Micro:bit          |      √       |              |             |
 
 
 ## History

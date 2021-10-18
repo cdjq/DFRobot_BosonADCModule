@@ -1,4 +1,4 @@
-# DFRobot_BosonAdcModule
+# DFRobot_BosonADCModule
 * [中文版](./README_CN.md)
 
 Why？BOSON主控板所用芯片ESP32-WROVE-32 模拟量读取误差比较大，无法准确读取BOSON 的ph计，温湿度，距离等传感器的等值。所以需要通过另外一块专门用于模拟数值数据处理的模块作为数据转换模块。

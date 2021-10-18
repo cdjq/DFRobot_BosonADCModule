@@ -1,24 +1,24 @@
 /*!
- * @file  DFRobot_BosonAdcModule.cpp
- * @brief  DFRobot_BosonAdcModule.cpp Initialize the IIC, 
+ * @file  DFRobot_BosonADCModule.cpp
+ * @brief  DFRobot_BosonADCModule.cpp Initialize the IIC, 
  * @n      获取模块基本信息, 获取模拟量A1和A2
  * @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license  The MIT License (MIT)
  * @author  [qsjhyy](yihuan.huang@dfrobot.com)
  * @version  V1.0
  * @date  2021-10-12
- * @url  https://github.com/DFRobot/DFRobot_BosonAdcModule
+ * @url  https://github.com/DFRobot/DFRobot_BosonADCModule
  */
-#include "DFRobot_BosonAdcModule.h"
+#include "DFRobot_BosonADCModule.h"
 
-DFRobot_BosonAdcModule::DFRobot_BosonAdcModule(uint8_t iicAddr, TwoWire *pWire)
+DFRobot_BosonADCModule::DFRobot_BosonADCModule(uint8_t iicAddr, TwoWire *pWire)
 {
   _deviceAddr = iicAddr;
   _pWire = pWire;
 }
 
 
-int DFRobot_BosonAdcModule::begin(void)
+int DFRobot_BosonADCModule::begin(void)
 {
   _pWire->begin();   // Wire.h (IIC)library function initialize wire library
   delay(50);
@@ -40,7 +40,7 @@ int DFRobot_BosonAdcModule::begin(void)
   return NO_ERR;
 }
 
-void DFRobot_BosonAdcModule::refreshBasicInfo(void)
+void DFRobot_BosonADCModule::refreshBasicInfo(void)
 {
   uint8_t tempBuf[8] = {0};
   readReg(BOSON_ADC_MODULE_PID_MSB_REG, tempBuf, sizeof(tempBuf));
@@ -50,7 +50,7 @@ void DFRobot_BosonAdcModule::refreshBasicInfo(void)
   basicInfo.iicAddr = (uint16_t)tempBuf[7];   // IIC addr
 }
 
-uint16_t DFRobot_BosonAdcModule::getAnalogSignalA1(void)
+uint16_t DFRobot_BosonADCModule::getAnalogSignalA1(void)
 {
   uint8_t analogSignalValue[2] = {0};
   readReg(BOSON_ADC_MODULE_ADC1_MSB_REG, analogSignalValue, sizeof(analogSignalValue));
@@ -58,7 +58,7 @@ uint16_t DFRobot_BosonAdcModule::getAnalogSignalA1(void)
   return (uint16_t)analogSignalValue[0] << 8 | (uint16_t)analogSignalValue[1];
 }
 
-uint16_t DFRobot_BosonAdcModule::getAnalogSignalA2(void)
+uint16_t DFRobot_BosonADCModule::getAnalogSignalA2(void)
 {
   uint8_t analogSignalValue[2] = {0};
   readReg(BOSON_ADC_MODULE_ADC2_MSB_REG, analogSignalValue, sizeof(analogSignalValue));
@@ -66,7 +66,7 @@ uint16_t DFRobot_BosonAdcModule::getAnalogSignalA2(void)
   return (uint16_t)analogSignalValue[0] << 8 | (uint16_t)analogSignalValue[1];
 }
 
-void DFRobot_BosonAdcModule::writeReg(uint8_t reg, const void* pBuf, size_t size)
+void DFRobot_BosonADCModule::writeReg(uint8_t reg, const void* pBuf, size_t size)
 {
   if(pBuf == NULL){
     DBG("pBuf ERROR!! : null pointer");
@@ -83,7 +83,7 @@ void DFRobot_BosonAdcModule::writeReg(uint8_t reg, const void* pBuf, size_t size
   _pWire->endTransmission();
 }
 
-size_t DFRobot_BosonAdcModule::readReg(uint8_t reg, void* pBuf, size_t size)
+size_t DFRobot_BosonADCModule::readReg(uint8_t reg, void* pBuf, size_t size)
 {
   size_t count = 0;
   if(NULL == pBuf){

@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*
 '''!
-  @file  DFRobot_BosonAdcModule.py
-  @brief  Define the infrastructure of DFRobot_BosonAdcModule class.
+  @file  DFRobot_BosonADCModule.py
+  @brief  Define the infrastructure of DFRobot_BosonADCModule class.
   @details  获取模块基本信息, 获取模拟量A1和A2
   @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
   @license  The MIT License (MIT)
   @author  [qsjhyy](yihuan.huang@dfrobot.com)
   @version  V1.0
   @date  2021-10-12
-  @url  https://github.com/DFRobot/DFRobot_BosonAdcModule
+  @url  https://github.com/DFRobot/DFRobot_BosonADCModule
 '''
 import sys
 import time
@@ -17,11 +17,11 @@ import logging
 from ctypes import *
 
 logger = logging.getLogger()
-#logger.setLevel(logging.INFO)   # Display all print information
-logger.setLevel(logging.FATAL)   # If you don’t want to display too many prints, only print errors, please use this option
+logger.setLevel(logging.INFO)   # Display all print information
+#logger.setLevel(logging.FATAL)   # If you don’t want to display too many prints, only print errors, please use this option
 ph = logging.StreamHandler()
 formatter = logging.Formatter("%(asctime)s - [%(filename)s %(funcName)s]:%(lineno)d - %(levelname)s: %(message)s")
-ph.setFormatter(formatter) 
+ph.setFormatter(formatter)
 logger.addHandler(ph)
 
 ## 默认的IIC通信地址
@@ -48,9 +48,9 @@ BOSON_ADC_MODULE_ADC1_LSB_REG     = 0x09
 BOSON_ADC_MODULE_ADC2_MSB_REG     = 0x0A
 BOSON_ADC_MODULE_ADC2_LSB_REG     = 0x0B
 
-class DFRobot_BosonAdcModule(object):
+class DFRobot_BosonADCModule(object):
     '''!
-      @brief 定义DFRobot_BosonAdcModule类
+      @brief 定义DFRobot_BosonADCModule类
       @details 用于驱动adc采集模块
     '''
 
@@ -76,11 +76,17 @@ class DFRobot_BosonAdcModule(object):
           @retval True indicate initialization succeed
           @retval False indicate initialization failed
         '''
-        ret = True
+        ret = False
         chip_id = self._read_reg(BOSON_ADC_MODULE_PID_MSB_REG, 2)
         logger.info((chip_id[0] << 8) | chip_id[1])
-        if BOSON_ADC_MODULE_PID != (chip_id[0] << 8) | chip_id[1]:
-            ret = False
+        i = 1
+        while i < 5:
+            if BOSON_ADC_MODULE_PID != (chip_id[0] << 8) | chip_id[1]:
+                chip_id = self._read_reg(BOSON_ADC_MODULE_PID_MSB_REG, 2)
+                i += 1
+            else:
+                ret = True
+                break
         return ret
 
     def read_basic_info(self):

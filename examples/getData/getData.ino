@@ -6,15 +6,15 @@
  * @author      [qsjhyy](yihuan.huang@dfrobot.com)
  * @version     V1.0
  * @date        2021-10-12
- * @url         https://github.com/DFRobot/DFRobot_BosonAdcModule
+ * @url         https://github.com/DFRobot/DFRobot_BosonADCModule
  */
-#include <DFRobot_BosonAdcModule.h>
+#include <DFRobot_BosonADCModule.h>
 
 /**
  * 实例化一个对象，来驱动我们的传感器;
  * IIC地址根据模块当前选择的设置即可，默认为0x06
  */
-DFRobot_BosonAdcModule sensor(/*iicAddr = */0x06, /*iicBus = */&Wire);
+DFRobot_BosonADCModule sensor(/*iicAddr = */0x06, /*iicBus = */&Wire);
 
 void setup()
 {
