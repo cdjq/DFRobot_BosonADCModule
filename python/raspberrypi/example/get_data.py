@@ -2,6 +2,8 @@
 '''!
   @file      get_data.py
   @brief     这个demo演示了如何获取模块基本信息, 获取模拟量A1和A2
+  @note      当其中一个引脚浮空时, 会受另一个测试引脚上的信号影响, 
+  @n         表现为: 值会一定程度上跟随变化, 属于正常现象, 不悬空就不会跟随变化
   @copyright Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
   @license   The MIT License (MIT)
   @author    [qsjhyy](yihuan.huang@dfrobot.com)
