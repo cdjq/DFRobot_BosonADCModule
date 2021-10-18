@@ -29,7 +29,7 @@ What？通过单片机采集模拟数据，转换为I2C信号输出。
 
 ## Installation
 
-使用库，首先下载库文件，将其粘贴到指定的目录中，然后打开Examples文件夹并在该文件夹中运行演示。
+使用库，首先下载库文件，将其粘贴到指定的目录中，然后打开example文件夹并在该文件夹中运行演示。
 
 
 ## Methods
@@ -69,6 +69,7 @@ What？通过单片机采集模拟数据，转换为I2C信号输出。
 ## Compatibility
 
 * RaspberryPi Version
+
 | Board        | Work Well | Work Wrong | Untested | Remarks |
 | ------------ | :-------: | :--------: | :------: | ------- |
 | RaspberryPi2 |           |            |    √     |         |
@@ -76,6 +77,7 @@ What？通过单片机采集模拟数据，转换为I2C信号输出。
 | RaspberryPi4 |     √     |            |          |         |
 
 * Python Version
+
 | Python  | Work Well | Work Wrong | Untested | Remarks |
 | ------- | :-------: | :--------: | :------: | ------- |
 | Python2 |     √     |            |          |         |

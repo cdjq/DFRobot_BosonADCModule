@@ -104,7 +104,7 @@ size_t DFRobot_BosonADCModule::readReg(uint8_t reg, void* pBuf, size_t size)
 
     while (_pWire->available()){
       _pBuf[count++] = _pWire->read();   // Use read() to receive and put into buf
-      // DBG(_pBuf[count-1], HEX);
+      DBG(_pBuf[count-1], HEX);
     }
   }
 

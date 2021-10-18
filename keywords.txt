@@ -1,7 +1,6 @@
 #######################################
-# Syntax Coloring Map For PID Library
+# Syntax Coloring Map For DFRobot_BosonADCModule
 #######################################
-
 
 #######################################
 # Datatypes (KEYWORD1)

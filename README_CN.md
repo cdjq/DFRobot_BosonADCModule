@@ -73,14 +73,15 @@ What？通过单片机采集模拟数据，转换为I2C信号输出。
 
 ## 兼容性
 
-MCU                |  Work Well   |  Work Wrong  |  Untested   | Remarks
------------------- | :----------: | :----------: | :---------: | :---:
+MCU                | Work Well    | Work Wrong   | Untested    | Remarks
+------------------ | :----------: | :----------: | :---------: | :----:
 Arduino Uno        |      √       |              |             |
 Arduino MEGA2560   |      √       |              |             |
 Arduino Leonardo   |      √       |              |             |
 FireBeetle-ESP8266 |      √       |              |             |
 FireBeetle-ESP32   |      √       |              |             |
 FireBeetle-M0      |      √       |              |             |
+Micro:bit          |      √       |              |             |
 
 
 ## 历史
